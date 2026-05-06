@@ -1,175 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | GhostNet</title>
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Home | GhostNet</title> 
+    
     <script src="https://kit.fontawesome.com/eeb01edac2.js" crossorigin="anonymous"></script>
+    
     <style>
-        :root { --glow: #00ff41; --bg: #050505; }
-        
-        body { background-color: var(--bg); color: var(--glow); font-family: 'Courier New', monospace; margin: 0; }
-        
-        /* Ensure content is visible if you aren't using the loader script right now */
-        #main-content { opacity: 1; display: block; transition: opacity 1s; }
+    :root { 
+        --glow: #00ff41;
+        --bg: #050505;
+    }
+    
+    body {
+        background-color: var(--bg);
+        color: var(--glow);
+        font-family: 'Courier New', monospace; 
+        margin: 0;
+    } 
+    
+    /* Ensure content is visible if you aren't using the loader script right now */ 
+    #main-content {
+        opacity: 1; 
+        display: block;
+        transition: opacity 1s;
+    }
+    
+/* HERO SECTION */
+    .hero {
+        text-align: center; 
+        padding: 80px 20px;
+        border: 1px solid var(--glow);
+        margin: 20px; 
+        background: rgba(0, 255, 65, 0.02);
+    } 
+    
+    .hero h1 {
+        font-size: 2.5rem; 
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    
+    .hero p { 
+        margin-bottom: 30px; 
+        color: #888;
+    }
+    
+/* HEADER & NAV */
+    .header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+        position: sticky;
+        top: 40px;
+        background: #000;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .nav-links a { 
+        color: var(--glow); 
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 13px; 
+        letter-spacing: 1px; 
+    }
+    
+/* SECTIONS */
+    .section-title { 
+        color: var(--glow); 
+        padding: 10px 20px;
+        border-left: 4px solid var(--glow); 
+        margin: 40px 20px 20px 20px;
+        text-transform: uppercase;
+    }
+    
+.content-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+    
+    .feature-card {
+        border: 1px solid rgba(0, 255, 65, 0.2);
+        padding: 20px; 
+        background: #080808;
+    }
+    
+    /* BUTTONS */
+    .btn-container { 
+        display: flex;
+        justify-content: center; 
+        gap: 20px; 
+        flex-wrap: wrap; 
+        margin-top: 20px;
+    }
+    
+    .cta-btn { 
+        display: inline-block; 
+        padding: 15px 30px;
+        border: 1px solid var(--glow);
+        color: var(--glow); 
+        text-decoration: none; 
+        transition: 0.3s;
+        font-weight: bold; 
+        letter-spacing: 1px;
+        min-width: 200px;
+            } 
+    
+    .cta-btn:hover { 
+        background: var(--glow); 
+        color: #000;
+        box-shadow: 0 0 20px var(--glow);
+    }
+    
+    /* BANNER */
+    .announcement-banner {
+  width: 100%;
+  background: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-        /* HERO SECTION */
-        .hero { 
-            text-align: center; 
-            padding: 80px 20px; 
-            border: 1px solid var(--glow);
-            margin: 20px;
-            background: rgba(0, 255, 65, 0.02);
-        }
-        .hero h1 { font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .hero p { margin-bottom: 30px; color: #888; }
-
-        /* HEADER & NAV */
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid rgba(0, 255, 65, 0.1); }
-        .nav-links a { color: var(--glow); text-decoration: none; margin-left: 20px; font-size: 13px; letter-spacing: 1px; }
-
-        /* SECTIONS */
-        .section-title { 
-            color: var(--glow); 
-            padding: 10px 20px;
-            border-left: 4px solid var(--glow);
-            margin: 40px 20px 20px 20px;
-            text-transform: uppercase;
-        }
-
-        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px; }
-        .feature-card { border: 1px solid rgba(0, 255, 65, 0.2); padding: 20px; background: #080808; }
-        
-        /* BUTTONS */
-        .btn-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .cta-btn { 
-            display: inline-block; 
-            padding: 15px 30px; 
-            border: 1px solid var(--glow); 
-            color: var(--glow); 
-            text-decoration: none; 
-            transition: 0.3s;
-            font-weight: bold;
-            letter-spacing: 1px;
-            min-width: 200px;
-        }
-        .cta-btn:hover { background: var(--glow); color: #000; box-shadow: 0 0 20px var(--glow); }
-
+.announcement-banner:hover {
+  background: #e6b800;
+}
+    
     </style>
 </head>
 <body>
-
-    <div id="main-content">
-        <header class="header">
-            <div style="display: flex; flex-direction: column;">
-                <span style="font-weight: bold; letter-spacing: 2px;">[ GHOSTNET ]</span>
-            </div>
-            <nav class="nav-links">
-                <a href="/"><i class="fa-solid fa-house-chimney"></i> HOME</a>
-                <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> LOGIN</a>
-            </nav>
-        </header>
-
-        <section class="hero">
-            <h1>It's time to protect your server.</h1>
-            <p>GhostNet is a powerful Discord utility designed for surveillance and automation.</p>
-            
-            <div class="btn-container">
-                <a href="https://discord.com/oauth2/authorize?client_id=1453941722324402327&permissions=8&integration_type=0&scope=bot+applications.commands" class="cta-btn" target="_blank">
-                    <i class="fa-brands fa-discord"></i> ADD TO DISCORD
-                </a>
-                
-                <a href="https://discord.gg/Y2HMVgecQT" class="cta-btn secondary" target="_self">
-                    <i class="fa-solid fa-play"></i> PLAY IN OUR SERVER
-                </a>
-            </div>
-        </section>
-        
-<div class="section-title"><i class="fa-solid fa-cogs"></i> Core Features</div>
-<div class="content-grid">
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-shield"></i> Security</h3>
-        <p>Anti-raid, anti-spam, moderation logs, verification, and full server protection.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-hand-holding-dollar"></i> Economy & Items</h3>
-        <p>Coins, items, inventories, trading, and a full economy system to keep your server engaged.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-robot"></i> Automation</h3>
-        <p>Auto roles, welcome messages, reaction roles, event reminders, and command scheduling.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-gamepad"></i> Games & Fun</h3>
-        <p>Mini-games, trivia, leaderboards, and interactive features to entertain your members.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Setup Wizard</h3>
-        <p>Quick setup commands like !welcome-setup or !economy-setup to get the bot running in seconds.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-tools"></i> Utilities</h3>
-        <p>Text tools, server info, moderation utilities, reminders, and advanced command shortcuts.</p>
-    </div>
+    
+<div id="main-content"> 
+    
+    <!-- Note to br3h, please remove this soon. Thanks, Tyler -->
+    <!-- Anything that has "BANNER" in it, please remove unless you're having another announcement here. -->
+    <!-- Banner HTML-->
+    <div class="announcement-banner" onclick="window.location.href='/docs/what-happened-to-the-old-owner'">
+  NothingButTyler has stepped away from GhostNet. Click here for more info.
 </div>
-        
-        <div class="section-title"><i class="fa-solid fa-lightbulb"></i> Why GhostNet?</div>
-<div class="content-grid">
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-bolt"></i> All-in-One</h3>
-        <p>No need for multiple bots — GhostNet does moderation, economy, games, items, and utilities all in one.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-brain"></i> Smart & Customizable</h3>
-        <p>Customizable commands, automation rules, and advanced logging to fit any server style.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-rocket"></i> Fast & Reliable</h3>
-        <p>Instant responses, minimal downtime, and smooth handling of large communities.</p>
-    </div>
-    <div class="feature-card">
-        <h3><i class="fa-solid fa-heart"></i> Community Driven</h3>
-        <p>Regular updates, feedback-based features, and active support to grow with your server.</p>
-    </div>
-</div>
-        
-        <div class="section-title"><i class="fa-solid fa-list-check"></i> Recent Updates</div>
-<div class="content-grid">
-    <div class="feature-card">
-        <h3>v2.0.0</h3>
-        <p>Major update: added full economy, items, trading, mini-games, and expanded security commands.</p>
-    </div>
-    <div class="feature-card">
-        <h3>v1.5.2</h3>
-        <p>Enhanced automation: auto roles, reaction roles, scheduled events, and logging improvements.</p>
-    </div>
-    <div class="feature-card">
-        <h3>v1.1.0</h3>
-        <p>Initial public release: core moderation, security, setup wizard, and basic fun commands.</p>
-    </div>
-</div>
-        
-        <div class="section-title"><i class="fa-solid fa-comments"></i> What Our Users Say</div>
-<div class="content-grid">
-    <div class="feature-card">
-        <p>"GhostNet replaced 5 bots in our server — moderation, economy, and games all in one."</p>
-        <strong>- Server Admin</strong>
-    </div>
-    <div class="feature-card">
-        <p>"Our members love the economy and item system. Trading keeps everyone active!"</p>
-        <strong>- Community Manager</strong>
-    </div>
-    <div class="feature-card">
-        <p>"The setup wizard made it ridiculously easy to get started. 10/10 bot!"</p>
-        <strong>- Mod Team</strong>
-    </div>
-</div>
-       
+    
+    <script>
+  if (!localStorage.getItem("seenBanner")) {
+    document.querySelector(".announcement-banner").style.display = "block";
+  }
 
-        <footer style="text-align: center; padding: 40px; color: #333; font-size: 12px;">
-            GHOSTNET PROJECT | 2026
-        </footer>
+  document.querySelector(".announcement-banner").onclick = () => {
+    localStorage.setItem("seenBanner", "true");
+    window.location.href = "/announcement.html";
+  };
+</script>
+    <!-- end of Banner HTML-->
+    
+    
+    <header class="header"> 
+        <div style="display: flex; flex-direction: column;"> 
+            <span style="font-weight: bold; letter-spacing: 2px;">[ GHOSTNET ]</span> 
+        </div> 
+        <nav class="nav-links">
+            <a href="/"><i class="fa-solid fa-house-chimney"></i> HOME</a>
+            <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> LOGIN</a> 
+        </nav> 
+    </header>
+    
+<section class="hero">
+    <h1>It's time to protect your server.</h1> 
+    <p>GhostNet is a powerful Discord utility designed for surveillance and automation.</p>
+    <div class="btn-container">
+        <a href="https://discord.com/oauth2/authorize?client_id=1453941722324402327&permissions=8&integration_type=0&scope=bot+applications.commands" class="cta-btn" target="_blank"> 
+            <i class="fa-brands fa-discord"></i> ADD TO DISCORD </a> 
+        <a href="https://discord.gg/Y2HMVgecQT" class="cta-btn secondary" target="_self">
+            <i class="fa-solid fa-play"></i> PLAY IN OUR SERVER </a> 
+    </div> 
+</section> 
+    
+    <div class="section-title"><i class="fa-solid fa-cogs"></i> Core Features</div>
+    <div class="content-grid">
+        <div class="feature-card">
+            <h3><i class="fa-solid fa-shield"></i> Security</h3>
+            <p>Anti-raid, anti-spam, moderation logs, verification, and full server protection.</p> 
+        </div> 
+        
+        <div class="feature-card">
+            <h3><i class="fa-solid fa-hand-holding-dollar"></i> Economy & Items</h3>
+            <p>Coins, items, inventories, trading, and a full economy system to keep your server engaged.</p> 
+        </div> 
+        
+        <div class="feature-card">
+            <h3><i class="fa-solid fa-robot"></i> Automation</h3> 
+            <p>Auto roles, welcome messages, reaction roles, event reminders, and command scheduling.</p>
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3><i class="fa-solid fa-gamepad"></i> Games & Fun</h3>
+            <p>Mini-games, trivia, leaderboards, and interactive features to entertain your members.</p>
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Setup Wizard</h3>
+            <p>Quick setup commands like !welcome-setup or !economy-setup to get the bot running in seconds.</p> 
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3><i class="fa-solid fa-tools"></i> Utilities</h3>
+            <p>Text tools, server info, moderation utilities, reminders, and advanced command shortcuts.</p>
+        </div>
+        
+    </div> 
+    
+    <div class="section-title">
+        <i class="fa-solid fa-lightbulb"></i> Why GhostNet?</div>
+    
+    <div class="content-grid"> 
+        <div class="feature-card"> 
+            <h3><i class="fa-solid fa-bolt"></i> All-in-One</h3>
+            <p>No need for multiple bots — GhostNet does moderation, economy, games, items, and utilities all in one.</p> 
+        </div> 
+        
+        <div class="feature-card">
+            <h3><i class="fa-solid fa-brain"></i> Smart & Customizable</h3> 
+            <p>Customizable commands, automation rules, and advanced logging to fit any server style.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3><i class="fa-solid fa-rocket"></i> Fast & Reliable</h3>
+            <p>Instant responses, minimal downtime, and smooth handling of large communities.</p> 
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3><i class="fa-solid fa-heart"></i> Community Driven</h3> 
+            <p>Regular updates, feedback-based features, and active support to grow with your server.</p>
+        </div>
+        
     </div>
-
+    
+    <div class="section-title">
+        <i class="fa-solid fa-list-check"></i> Recent Updates</div>
+    
+    <div class="content-grid"> 
+        <div class="feature-card"> 
+            <h3>v2.0.0</h3>
+            <p>Major update: added full economy, items, trading, mini-games, and expanded security commands.</p>
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3>v1.5.2</h3> 
+            <p>Enhanced automation: auto roles, reaction roles, scheduled events, and logging improvements.</p>
+        </div> 
+        
+        <div class="feature-card"> 
+            <h3>v1.1.0</h3>
+            <p>Initial public release: core moderation, security, setup wizard, and basic fun commands.</p>
+        </div>
+        
+    </div> 
+    
+    <div class="section-title">
+        <i class="fa-solid fa-comments"></i> What Our Users Say</div>
+    <div class="content-grid"> 
+        <div class="feature-card">
+            <p>"GhostNet replaced 5 bots in our server — moderation, economy, and games all in one."</p>
+            <strong>- Server Admin</strong>
+        </div> 
+        
+        <div class="feature-card"> 
+            <p>"Our members love the economy and item system. Trading keeps everyone active!"</p>
+            <strong>- Community Manager</strong> 
+        </div> 
+        
+        <div class="feature-card"> 
+            <p>"The setup wizard made it ridiculously easy to get started. 10/10 bot!"</p> 
+            <strong>- Mod Team</strong>  
+        </div>
+    </div> 
+    
+<footer style="text-align: center; padding: 40px; color: #333; font-size: 12px;"> GHOSTNET PROJECT | 2026 </footer>
+    
+</div>    
 </body>
 </html>

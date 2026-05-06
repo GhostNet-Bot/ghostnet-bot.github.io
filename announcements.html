@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Announcements | GhostNet</title> 
+    
+    <script src="https://kit.fontawesome.com/eeb01edac2.js" crossorigin="anonymous"></script>
+    
+    <style>
+    :root { 
+        --glow: #00ff41;
+        --bg: #050505;
+    }
+    
+    body {
+        background-color: var(--bg);
+        color: var(--glow);
+        font-family: 'Courier New', monospace; 
+        margin: 0;
+    }
+
+    .header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+        position: sticky;
+        top: 0;
+        background: #000;
+        backdrop-filter: blur(6px);
+    }
+
+    .nav-links a { 
+        color: var(--glow); 
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 13px; 
+        letter-spacing: 1px; 
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 20px;
+    }
+
+    .section-title { 
+        color: var(--glow); 
+        padding: 10px 20px;
+        border-left: 4px solid var(--glow); 
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .card {
+        border: 1px solid rgba(0, 255, 65, 0.2);
+        padding: 25px;
+        background: #080808;
+        line-height: 1.6;
+    }
+
+    .date {
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 30px;
+        color: var(--glow);
+        text-decoration: none;
+        border: 1px solid var(--glow);
+        padding: 10px 15px;
+        transition: 0.3s;
+    }
+
+    .back:hover {
+        background: var(--glow);
+        color: #000;
+        box-shadow: 0 0 10px var(--glow);
+    }
+
+    </style>
+</head>
+
+<body>
+
+<header class="header"> 
+    <div>
+        <span style="font-weight: bold; letter-spacing: 2px;">[ GHOSTNET ]</span> 
+    </div> 
+    <nav class="nav-links">
+        <a href="/"><i class="fa-solid fa-house-chimney"></i> HOME</a>
+        <a href="/announcements"><i class="fa-solid fa-bullhorn"></i> ANNOUNCEMENTS</a>
+        <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> LOGIN</a> 
+    </nav> 
+</header>
+
+<div class="container">
+
+    <div class="section-title">
+        <i class="fa-solid fa-bullhorn"></i> Announcements
+    </div>
+
+    <!-- NEWEST FIRST -->
+    <div class="card">
+        <div class="date">May 2026</div>
+        <h3>Why is the old owner of GhostNet quitting?</h3>
+        <p>
+            NothingButTyler is stepping away from GhostNet. Ownership is being transferred
+            to br3h as development continues under new leadership.
+        </p>
+        <a href="/announcements/why-is-the-old-owner-quitting" class="back">Read more →</a>
+    </div>
+
+</div>
+
+</body>
+</html>
